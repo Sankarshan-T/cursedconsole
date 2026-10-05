@@ -1,14 +1,12 @@
 #include <iostream>
 #include <random>
 
-#include "Player.h"
-
 using namespace std;
 
 int rollDice(int sides)
 {
-    random_device rd;
-    mt19937 generator(rd());
+    random_device randomDevice;
+    mt19937 generator(randomDevice());
     uniform_int_distribution<int> distribution(1, sides);
 
     return distribution(generator);
@@ -16,13 +14,12 @@ int rollDice(int sides)
 
 int main()
 {
-    cout << "cursed console\n";
-    cout << "welcome to this crooked console\n";
+    cout << "X - CURSED CONSOLE - X\n";
+    cout << "Welcome to this cursed cli ;)\n";
 
-    Player player("cream :)");
-    player.showStats();
+    int roll = rollDice(6);
 
-    cout << "You rolled a " << rollDice(6) << "!\n";
+    std::cout << "You rolled a " << roll << "!\n";
 
     return 0;
 }
