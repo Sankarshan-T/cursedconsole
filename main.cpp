@@ -1,6 +1,8 @@
 #include <iostream>
 #include <random>
 
+#include "Player.h"
+
 using namespace std;
 
 int rollDice(int sides)
@@ -18,6 +20,9 @@ int main()
     cout << "Welcome to this cursed cli ;)\n";
 
     int roll = rollDice(6);
+
+    Player player("coolc");
+    player.showStats();
 
     std::cout << "You rolled a " << roll << "!\n";
 
